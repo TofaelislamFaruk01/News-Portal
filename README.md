@@ -1,6 +1,7 @@
 # 📰 The Bulletin Wire 
 
 **The Bulletin Wire** is a modern, responsive online news portal built using React and Firebase. Designed to deliver breaking news, trending stories, and categorized content, it offers a clean user interface with seamless user experience. This project showcases my frontend development skills and Firebase integration for authentication and hosting.
+To explore go to: https://news-portal-d49af.web.app
 
 ---
 
