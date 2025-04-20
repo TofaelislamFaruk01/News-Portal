@@ -9,3 +9,10 @@ body {
   a.active{
     background-color: #E7E7E7;
   }
+
+  .logoName{
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 500;
+    font-style: oblique;
+    font-size: 56px;
+  }

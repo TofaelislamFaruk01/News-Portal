@@ -28,7 +28,7 @@ const HomeLayout = () => {
                  <LeftNavBar/>
                  
                  </aside>
-            <section className="col-span-6 h-[85vh] overflow-y-auto ">
+            <section className="col-span-6 h-[75vh] overflow-y-auto ">
                 <Outlet/>
             </section>
             <aside className="col-span-3">

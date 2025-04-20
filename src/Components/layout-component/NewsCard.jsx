@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaShareAlt, FaStar, FaEye } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const NewsCard = ({ news }) => {
   const {
@@ -53,9 +54,9 @@ const NewsCard = ({ news }) => {
         <p className="text-sm text-gray-700 line-clamp-3">{details}</p>
 
         {/* Read More Button */}
-        <button className="mt-1 px-4 py-1.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded">
+        <Link to={`/news/${news._id}`} className="mt-1 px-4 py-1.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded">
           Read More
-        </button>
+        </Link>
 
         {/* Footer: Stars + Views */}
         <div className="flex justify-between items-center pt-2 text-sm text-gray-600">

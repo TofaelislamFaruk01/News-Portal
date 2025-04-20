@@ -1,33 +1,67 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import HomeLayout from '../Layouts/HomeLayout';
 import CategoryNews from '../Pages/CategoryNews';
+import AuthLayout from '../Layouts/AuthLayout';
+import LogIn from '../Pages/LogIn';
+import Register from '../Pages/Register';
+import NewsDetails from '../Pages/NewsDetails';
+import PrivateRoute from './PrivateRoute';
 
-const Router = () => {
-    return (
+const Router = createBrowserRouter([
+
+    {
+        path:'/',
+        element: <HomeLayout/>,
+        children:[
+
+            {
+                index:true,
+                element: <Navigate to={"/category/01"} replace/>
+            },
+            {
+                path: 'category/:id',
+        element: <CategoryNews />,
+        loader:({params})=>
+            fetch(
+                `https://openapi.programming-hero.com/api/news/category/${params.id}`
+            ),
+            }
+        ]
+    },
+    {
+        path: '/news/:id',
+    element: <PrivateRoute>
+        <NewsDetails/>
+    </PrivateRoute>,
+    loader:({params})=>
+        fetch(`https://openapi.programming-hero.com/api/news/${params.id}`),
+
+    
+    },
+    {
+        path: '/auth',
+    element: <AuthLayout/>,
+    children:[
+        {
+            path:'/auth/login',
+            element: <LogIn/>
+        },
+        {
+            path:'/auth/register',
+            element: <Register/>
+        },
+
+    ]
+    },
+    {
+        path: '*',
+    element: <h1>Error 404 - Page Not Found</h1>,
+    },
 
 
 
-        <Routes>
-            <Route path="/" element={<HomeLayout />}>
-            <Route index element={<Navigate to="/category/1" replace />} />
-                <Route path="/category/:id" element={<CategoryNews/>} />
-
-
-
-            </Route>
-            <Route path='/news' element={<h1>news layout</h1>} />
-            <Route path='/auth' element={<h1>login page</h1>} />
-            <Route path='*' element={<h1>Error 404</h1>} />
-
-
-        </Routes>
-
-
-
-
-    );
-};
+]);
 
 export default Router;
