@@ -7,7 +7,7 @@ const CategoryNews = () => {
 
     const {data:news} = useLoaderData();
     const { id } = useParams();
-    console.log(news);
+    // console.log(news);
 
    
 

@@ -8,6 +8,7 @@ import LogIn from '../Pages/LogIn';
 import Register from '../Pages/Register';
 import NewsDetails from '../Pages/NewsDetails';
 import PrivateRoute from './PrivateRoute';
+import About from '../Pages/About';
 
 const Router = createBrowserRouter([
 
@@ -56,8 +57,16 @@ const Router = createBrowserRouter([
     ]
     },
     {
+        path: '/career',
+    element: <h1 className='text-center mt-10 text-base-500'>Cooming soon...</h1>,
+    },
+    {
+        path: '/about',
+    element: <About/>,
+    },
+    {
         path: '*',
-    element: <h1>Error 404 - Page Not Found</h1>,
+    element: <h1 className='text-center mt-10'>Error 404 - Page Not Found</h1>,
     },
 
 

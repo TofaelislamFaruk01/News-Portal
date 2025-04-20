@@ -58,7 +58,7 @@ if (Object.keys(newErrors).length > 0) {
         // Signed up 
         const user = result.user;
         setUser(user);
-        console.log("Signed up "+user);
+        // console.log("Signed up "+user);
         // setLoading(true);
         setErrors({});
         
@@ -67,7 +67,7 @@ if (Object.keys(newErrors).length > 0) {
             navigate("/");
 
         }).catch((error)=>{
-            console.log(error);
+            // console.log(error);
         })
         
         
@@ -75,7 +75,7 @@ if (Object.keys(newErrors).length > 0) {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode,errorMessage)
+        // console.log(errorCode,errorMessage)
       });
     
 

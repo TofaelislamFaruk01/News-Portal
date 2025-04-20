@@ -8,7 +8,7 @@ const LogIn = () => {
     const {setUser,logIn,setLoading}=useContext(AuthContext);
     const [error,setError]=useState(null);
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     const navigate = useNavigate();
 
     const handleSubmit=(e)=>{
@@ -16,10 +16,10 @@ const LogIn = () => {
         const form = e.target;
         const email= form.email.value;
         const password = form.password.value;
-        console.log({email,password});
+        // console.log({email,password});
         logIn(email,password)
         .then((result)=>{
-            console.log("Signed in")
+            // console.log("Signed in")
         const user = result.user;
         setUser(user);
         // setLoading(true);
@@ -30,7 +30,7 @@ const LogIn = () => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode,errorMessage);
+            // console.log(errorCode,errorMessage);
             setError(errorCode);
           });
     }
